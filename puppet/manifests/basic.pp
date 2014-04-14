@@ -1,9 +1,9 @@
 class basic {
   # run apt-get update before anything else runs
-  Class { 'basic::update_aptget': stage => first } ->
-  Class { 'basic::users': } ->
-  Class { 'basic::packages': } ->
-  Class { 'basic::helpers': }
+  class { 'basic::update_aptget': stage => first, } ->
+  class { 'basic::users': } ->
+  class { 'basic::packages': } ->
+  class { 'basic::helpers': }
 }
 
 class basic::users {
