@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vb|
 
-    # noinspection RubyResolvevagra
+    # noinspection RubyResolve
     unless Vagrant.has_plugin?('vagrant-vbguest')
       print 'vagrant-vbguest helps ensure you have the correct Guest Additions'
     end
@@ -50,7 +50,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Github Setup/Clone RSpec Book Examples
   config.vm.provision :shell,
-    :path => 'shell/github.sh', :args => "#{ENV['GIT_USER']}  #{ENV['GIT_USER_EMAIL']}",
+    :path => 'shell/github.sh',
+    :args => "#{ENV['GIT_USER']}  #{ENV['GIT_USER_EMAIL']} #{ENV['RSPEC_EXAMPLES_REPO']}",
     :privileged => false
 
   # Serverspec Tests

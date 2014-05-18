@@ -1,3 +1,14 @@
+# RSpec-Book Virtual Environment
+
+This project can be used to provision a virtual environment in which to carry
+out the exampe code from 
+'[The RSpec Book](http://pragprog.com/book/achbd/the-rspec-book)'.
+
+[Vagrant](http://www.vagrantup.com) is used to provison the virtual 
+environment. At this time only a [VirtualBox](http://www.virtualbox.org)
+environment is created. This instance utilises the *precise64* base box 
+provided [here](http://files.vagrantup.com/precise64.box).
+
 Provisioning code to establish a Vagrant environment using Puppet with
 Librarian-Puppet to create a box for building and running the code from
 'The RSpec Book'
