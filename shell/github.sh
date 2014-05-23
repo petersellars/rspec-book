@@ -38,10 +38,15 @@ error_exit() {
 # Enable automated Github authentication
 echo 'Adding GitHub RSA key to known_hosts file'
 ssh-keyscan -H github.com > ~/.ssh/known_hosts || \
-  error_exit "ERROR $LINENO: Failed to add missing symlink for VB GuestAddition 4.3.10"
+  error_exit "ERROR $LINENO: Failed to add GitHub RSA key to known_hosts file"
 
-echo 'Cloning the RSpec Example repository'
-git clone $rspec_example_repo || error_exit "ERROR $LINENO: Failed to clone RSpec Example repository!"
+echo 'Checking if the RSpec Example Repository Exists'
+if [ ! -d "$rspec_example_repo" ]; then
+  echo 'Cloning the RSpec Example repository'
+  git clone $rspec_example_repo || error_exit "ERROR $LINENO: Failed to clone RSpec Example repository!"
+else
+  echo 'RSpec Example Repository Already Exists'
+fi
 
 echo 'Configuring Git user'
 git config --global user.name $git_user || error_exit "ERROR $LINENO: Failed to configure Git user!"

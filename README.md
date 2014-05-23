@@ -9,28 +9,28 @@ environment. At this time only a [VirtualBox](http://www.virtualbox.org)
 environment is created. This instance utilises the *precise64* base box 
 provided [here](http://files.vagrantup.com/precise64.box).
 
-Provisioning code to establish a Vagrant environment using Puppet with
-Librarian-Puppet to create a box for building and running the code from
-'The RSpec Book'
+[Puppet](http://puppetlabs.com/) is used to provision
+[Ruby](https://www.ruby-lang.org/en/) using 
+[rbenv](https://github.com/sstephenson/rbenv), [RSpec](http://rspec.info/)
+and [Cucumber](http://cukes.info/) onto the [Vagrant](http://www.vagrantup.com)
+instance. The [Vagrant](http://www.vagrantup.com) instance utilises 
+[Librarian-Puppet](https://github.com/rodjek/librarian-puppet) to manage the
+[Puppet](http://puppetlabs.com/) modules used during provisioning.
 
-This box utilises several Vagrant plugins:
-* vagrant-vbguests
-* vagrant-hostsupdate
-* vagrant-hosts
-* vagrant-serverspec
+This box utilises several [Vagrant](http://www.vagrantup.com) plugins:
 
-vagrant provision --provision-with serverspec
-vagrant provision --provision-with hosts
+* [vagrant-vbguests](https://github.com/dotless-de/vagrant-vbguest)
+* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+* [vagrant-serverspec](https://github.com/jvoorhis/vagrant-serverspec)
+
+TODO: Update from here....
+
+## Running the Vagrant Instance
+
+* vagrant provision --provision-with serverspec
+* vagrant provision --provision-with hosts
 
 Uses SSH Agent Forwarding to enable GitHub access
-
-### TODO:
-
-* Test the box can run rspec and cucumber tests then Tag it!
-* Check Vagrant multiple provisioner running - is it per file order? Multiple?
-* Update the serverspec version in the vagrant-serverspec plugin
-* Look at moving the librarian-puppet to manage the puppet module folder (use puppet module list)
-* Utilise auto update so that a manual fix is not needed when using vagrant up (4.10)
 
 ### GitHub for storing the examples
 
