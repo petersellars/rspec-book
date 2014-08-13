@@ -30,6 +30,9 @@ TODO: Update from here....
 * vagrant provision --provision-with serverspec
 * vagrant provision --provision-with hosts
 
+* ./up.sh 2>&1 | tee up.log
+* ./initial-up.sh 2>&1 | tee initial-up.log
+
 Uses SSH Agent Forwarding to enable GitHub access
 
 ### GitHub for storing the examples

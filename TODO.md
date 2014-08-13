@@ -1,6 +1,7 @@
 # TO-DO
 
 * Tag the initial version (Working Version)
+* Add script to replace variable names in initial-up.sh and up.sh in one place
 * Check ServerSpec version update in plugin works
 * Tidy up and clean the README.md file
 * Look at moving the librarian-puppet to manage the puppet module folder
